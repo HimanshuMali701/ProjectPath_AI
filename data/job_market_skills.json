@@ -1,0 +1,30 @@
+{
+  "data_scientist": {
+    "python": 96,
+    "machine learning": 92,
+    "statistics": 86,
+    "feature engineering": 82,
+    "deep learning": 78,
+    "nlp": 74
+  },
+
+  "data_analyst": {
+    "sql": 97,
+    "python": 93,
+    "excel": 92,
+    "power bi": 88,
+    "tableau": 82,
+    "data visualization": 78,
+    "statistics": 72
+  },
+
+  "ml_engineer": {
+    "python": 96,
+    "machine learning": 93,
+    "pytorch": 92,
+    "tensorflow": 82,
+    "deep learning": 83,
+    "mlops": 88,
+    "docker": 76
+  }
+}

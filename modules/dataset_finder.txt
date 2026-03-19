@@ -1,0 +1,21 @@
+# modules/dataset_finder.py
+try:
+    from kaggle.api.kaggle_api_extended import KaggleApi
+    KAGGLE_AVAILABLE = True
+except Exception:
+    KAGGLE_AVAILABLE = False
+
+def find_kaggle_datasets(query, max_results=3):
+    """
+    Returns a list of dataset slugs or titles.
+    Requires Kaggle API credentials.
+    """
+    if not KAGGLE_AVAILABLE:
+        return []   # fallback — later we can use static links in projects_db.json
+
+    api = KaggleApi()
+    api.authenticate()
+    results = api.dataset_list(search=query, sort_by="hottest", page_size=max_results)
+    # each result has .ref (owner/dataset-name) and .title
+    out = [{"ref": r.ref, "title": r.title} for r in results]
+    return out

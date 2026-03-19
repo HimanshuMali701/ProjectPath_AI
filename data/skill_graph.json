@@ -1,0 +1,33 @@
+{
+"machine learning": [
+"feature engineering",
+"model evaluation",
+"random forest",
+"xgboost",
+"svm"
+],
+
+"deep learning": [
+"cnn",
+"rnn",
+"transformers"
+],
+
+"nlp": [
+"text preprocessing",
+"sentiment analysis",
+"topic modeling"
+],
+
+"time series": [
+"forecasting",
+"arima",
+"lstm"
+],
+
+"data visualization": [
+"matplotlib",
+"seaborn",
+"plotly"
+]
+}

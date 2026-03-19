@@ -1,0 +1,34 @@
+{
+  "data_scientist": [
+    "python",
+    "pandas",
+    "numpy",
+    "statistics",
+    "machine learning",
+    "scikit-learn",
+    "feature engineering",
+    "model evaluation",
+    "deep learning",
+    "nlp"
+  ],
+
+  "data_analyst": [
+    "python",
+    "pandas",
+    "sql",
+    "data visualization",
+    "power bi",
+    "tableau",
+    "statistics"
+  ],
+
+  "ml_engineer": [
+    "python",
+    "machine learning",
+    "deep learning",
+    "tensorflow",
+    "pytorch",
+    "model deployment",
+    "docker"
+  ]
+}

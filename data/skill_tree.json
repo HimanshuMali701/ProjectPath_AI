@@ -1,0 +1,35 @@
+{
+  "machine learning": {
+    "concepts": [
+      "feature engineering",
+      "model evaluation",
+      "cross validation"
+    ],
+    "algorithms": [
+      "random forest",
+      "xgboost",
+      "lightgbm",
+      "svm"
+    ]
+  },
+
+  "deep learning": {
+    "concepts": [
+      "neural networks",
+      "backpropagation"
+    ],
+    "algorithms": [
+      "cnn",
+      "rnn",
+      "transformers"
+    ]
+  },
+
+  "data analysis": {
+    "tools": [
+      "pandas",
+      "numpy",
+      "sql"
+    ]
+  }
+}

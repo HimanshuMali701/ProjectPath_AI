@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Customer Churn Prediction",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["classification", "feature engineering", "model evaluation"],
+    "difficulty": "Beginner",
+    "datasets": ["Telco Customer Churn Dataset", "IBM Customer Churn Dataset"]
+  },
+  {
+    "name": "Credit Card Fraud Detection",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["xgboost", "imbalanced data", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Credit Card Fraud Dataset", "IEEE Fraud Detection Dataset"]
+  },
+  {
+    "name": "Sales Forecasting System",
+    "roles": ["data_analyst", "data_scientist"],
+    "skills": ["time series", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Rossmann Sales Dataset"]
+  },
+  {
+    "name": "Image Classification CNN",
+    "roles": ["ml_engineer"],
+    "skills": ["cnn", "deep learning"],
+    "difficulty": "Intermediate",
+    "datasets": ["CIFAR10 Dataset"]
+  },
+  {
+    "name": "House Price Prediction",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["regression", "feature engineering"],
+    "difficulty": "Beginner",
+    "datasets": ["Kaggle House Prices Dataset"]
+  },
+  {
+    "name": "Customer Segmentation",
+    "roles": ["data_analyst", "data_scientist"],
+    "skills": ["clustering", "data visualization"],
+    "difficulty": "Beginner",
+    "datasets": ["Mall Customer Segmentation Dataset"]
+  },
+  {
+    "name": "Movie Recommendation System",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["recommendation systems", "matrix factorization"],
+    "difficulty": "Intermediate",
+    "datasets": ["MovieLens Dataset"]
+  },
+  {
+    "name": "Sentiment Analysis NLP",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["nlp", "text preprocessing", "classification"],
+    "difficulty": "Intermediate",
+    "datasets": ["IMDB Sentiment Dataset", "Twitter Sentiment Dataset"]
+  },
+  {
+    "name": "Spam Email Detection",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["nlp", "classification"],
+    "difficulty": "Beginner",
+    "datasets": ["SMS Spam Collection Dataset"]
+  },
+  {
+    "name": "Demand Forecasting",
+    "roles": ["data_analyst", "data_scientist"],
+    "skills": ["time series", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Retail Sales Forecasting Dataset"]
+  },
+  {
+    "name": "Stock Price Prediction",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["time series", "lstm"],
+    "difficulty": "Intermediate",
+    "datasets": ["Yahoo Finance Stock Dataset"]
+  },
+  {
+    "name": "Energy Consumption Forecasting",
+    "roles": ["data_analyst", "data_scientist"],
+    "skills": ["time series", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Household Energy Dataset"]
+  },
+  {
+    "name": "Loan Default Prediction",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["classification", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Lending Club Loan Dataset"]
+  },
+  {
+    "name": "Credit Risk Modeling",
+    "roles": ["data_scientist"],
+    "skills": ["classification", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["German Credit Risk Dataset"]
+  },
+  {
+    "name": "Customer Lifetime Value Prediction",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["regression", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Online Retail Dataset"]
+  },
+  {
+    "name": "Product Recommendation Engine",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["recommendation systems", "collaborative filtering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Amazon Product Dataset"]
+  },
+  {
+    "name": "Fake News Detection",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["nlp", "classification"],
+    "difficulty": "Intermediate",
+    "datasets": ["Fake News Dataset"]
+  },
+  {
+    "name": "Chatbot Intent Classification",
+    "roles": ["ml_engineer", "data_scientist"],
+    "skills": ["nlp", "deep learning"],
+    "difficulty": "Intermediate",
+    "datasets": ["Chatbot Intent Dataset"]
+  },
+  {
+    "name": "Object Detection System",
+    "roles": ["ml_engineer"],
+    "skills": ["yolo", "computer vision"],
+    "difficulty": "Advanced",
+    "datasets": ["COCO Dataset"]
+  },
+  {
+    "name": "Face Mask Detection",
+    "roles": ["ml_engineer"],
+    "skills": ["cnn", "computer vision"],
+    "difficulty": "Intermediate",
+    "datasets": ["Face Mask Detection Dataset"]
+  },
+  {
+    "name": "Handwritten Digit Recognition",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["cnn", "deep learning"],
+    "difficulty": "Beginner",
+    "datasets": ["MNIST Dataset"]
+  },
+  {
+    "name": "Anomaly Detection System",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["anomaly detection", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Network Intrusion Dataset"]
+  },
+  {
+    "name": "Network Intrusion Detection",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["classification", "anomaly detection"],
+    "difficulty": "Intermediate",
+    "datasets": ["KDD Cup Dataset"]
+  },
+  {
+    "name": "Medical Diagnosis Prediction",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["classification", "feature engineering"],
+    "difficulty": "Intermediate",
+    "datasets": ["Heart Disease Dataset"]
+  },
+  {
+    "name": "Disease Prediction System",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["classification", "feature engineering"],
+    "difficulty": "Beginner",
+    "datasets": ["Medical Symptoms Dataset"]
+  },
+  {
+    "name": "Air Quality Prediction",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["regression", "time series"],
+    "difficulty": "Intermediate",
+    "datasets": ["Air Quality Dataset"]
+  },
+  {
+    "name": "Traffic Flow Prediction",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["time series", "deep learning"],
+    "difficulty": "Advanced",
+    "datasets": ["Traffic Dataset"]
+  },
+  {
+    "name": "News Topic Classification",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["nlp", "classification"],
+    "difficulty": "Intermediate",
+    "datasets": ["20 Newsgroups Dataset"]
+  },
+  {
+    "name": "Resume Classification System",
+    "roles": ["data_scientist", "data_analyst"],
+    "skills": ["nlp", "classification"],
+    "difficulty": "Intermediate",
+    "datasets": ["Resume Dataset"]
+  },
+  {
+    "name": "Emotion Detection NLP",
+    "roles": ["data_scientist", "ml_engineer"],
+    "skills": ["nlp", "deep learning"],
+    "difficulty": "Intermediate",
+    "datasets": ["Emotion Dataset"]
+  }
+]
