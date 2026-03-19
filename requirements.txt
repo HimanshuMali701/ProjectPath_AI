@@ -1,0 +1,10 @@
+streamlit
+pandas
+spacy
+scikit-learn
+networkx
+pdfplumber
+keybert
+kaggle
+beautifulsoup4
+plotly
