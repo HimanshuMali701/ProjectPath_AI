@@ -111,7 +111,13 @@ function App() {
   };
   return (
     
-    <div className={darkMode ? "dark" : ""}>
+    <div
+  className={`${
+    darkMode
+      ? "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white"
+      : "bg-gradient-to-br from-slate-100 to-slate-200 text-black"
+  } min-h-screen transition-colors duration-500`}
+>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
@@ -227,7 +233,7 @@ function App() {
                     whileTap={{ scale: 0.96 }}
                     whileHover={{  scale: 1.02, y: -2 }}
                     onClick={() => setDarkMode((v) => !v)}
-                    className="absolute right-0 top-0 flex items-center gap-3 rounded-full border border-slate-200/70 bg-white/75 px-3 py-2 shadow-sm backdrop-blur-xl transition hover:shadow-cyan-500/20 dark:border-slate-700 dark:bg-slate-900/70"
+                    className="fixed top-5 right-5 z-50 flex items-center gap-3 rounded-full border border-slate-200/70 bg-white/60 px-3 py-2 shadow-sm backdrop-blur-xl transition hover:shadow-cyan-500/20 dark:border-slate-700 dark:bg-slate-900/70 transition-all duration-300 ease-in-out"
                   >
                     <div className="relative h-5 w-10 rounded-full bg-slate-200 transition dark:bg-slate-700">
                       <motion.span
