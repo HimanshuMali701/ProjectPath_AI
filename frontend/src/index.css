@@ -1,3 +1,85 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ⭐ Static stars */
+.stars {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow:
+    20px 30px var(--star-color),
+    100px 200px var(--star-color),
+    300px 150px var(--star-color),
+    500px 400px var(--star-color),
+    700px 250px var(--star-color),
+    900px 100px var(--star-color),
+    1200px 300px var(--star-color),
+    1500px 200px var(--star-color);
+  animation: shoot 10s linear infinite;
+}
+
+/* 🌠 Shooting stars */
+/* 🌠 FIXED Shooting Stars */
+.shooting-stars::before,
+.shooting-stars::after {
+  content: "";
+  position: absolute;
+  width: 1px;              /* thinner */
+  height: 40px;            /* smaller */
+  background: linear-gradient(var(--star-color), transparent);
+  opacity: 0;              /* start hidden */
+  filter: blur(0.5px);     /* soft glow */
+  animation: shoot 6s linear infinite;
+}
+
+/* second star delay */
+.shooting-stars::after {
+  left: 70%;
+  animation-delay: 3s;
+}
+
+/* smooth shooting animation */
+@keyframes shoot {
+  0% {
+    transform: translate(-200px, -200px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(1200px, 800px) rotate(45deg);
+    opacity: 0;
+  }
+}
+@keyframes shoot {
+  0% {
+    transform: translate(-200px, -200px) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(1200px, 800px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-1000px);
+  }
+}
+/* Light mode */
+:root {
+  --star-color: rgba(15, 23, 42, 0.6); /* dark stars */
+}
+
+/* Dark mode */
+.dark {
+  --star-color: rgba(255, 255, 255, 0.9); /* bright stars */
+}
