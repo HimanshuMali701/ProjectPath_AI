@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from io import BytesIO
 import json
-
+import os
 from modules.skill_extractor import extract_skills
 from modules.skill_gap import find_skill_gap, advanced_recommendations
 from modules.project_recommender import recommend_projects
@@ -98,4 +98,5 @@ def download_blueprint():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
