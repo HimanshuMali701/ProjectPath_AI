@@ -83,3 +83,6 @@
 .dark {
   --star-color: rgba(255, 255, 255, 0.9); /* bright stars */
 }
+body {
+  font-family: 'Inter', sans-serif;
+}

@@ -629,7 +629,7 @@ function StatCard({ title, value, capitalize = false }) {
     <motion.div
       whileHover={{ y: -4, scale: 1.01 }}
       transition={{ duration: 0.2 }}
-      className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-6 shadow-lg backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/75"
+      className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-5 shadow-lg backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/75"
     >
       {/* Glow */}
       <div className="absolute inset-0 opacity-0 transition hover:opacity-100">
@@ -637,12 +637,14 @@ function StatCard({ title, value, capitalize = false }) {
       </div>
 
       <div className="relative">
-        <p className="text-sm font-medium text-slate-400">
+        {/* Title */}
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
           {title}
         </p>
 
+        {/* Value */}
         <p
-          className={`mt-3 text-3xl font-black tracking-tight text-white ${
+          className={`mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white ${
             capitalize ? "capitalize" : ""
           }`}
         >
