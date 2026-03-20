@@ -6,6 +6,8 @@ import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import AnimatedNumber from "./components/AnimatedNumber";
 
+const API = "https://projectpath-ai-yjgy.onrender.com/";
+
 const sectionVariants = {
   hidden: { opacity: 0, y: 18 },
   visible: {
@@ -53,7 +55,7 @@ function App() {
       let res;
 
       if (mode === "manual") {
-        res = await axios.post("http://127.0.0.1:5000/analyze", {
+        res = await axios.post(`${API}/analyze`, {
           role,
           skills: parsedSkills,
         });
@@ -68,7 +70,7 @@ function App() {
         formData.append("file", file);
         formData.append("role", role);
 
-        res = await axios.post("http://127.0.0.1:5000/analyze_resume", formData);
+        res = await axios.post(`${API}/analyze_resume`, formData);
       }
 
       setResult(res.data);
@@ -82,8 +84,7 @@ function App() {
 
   const downloadBlueprint = async (project) => {
     try {
-      const res = await axios.post(
-        "http://127.0.0.1:5000/download_blueprint",
+      const res = await axios.post(`${API}/download_blueprint`,
         project,
         { responseType: "blob" }
       );
