@@ -8,3 +8,5 @@ keybert
 kaggle
 beautifulsoup4
 plotly
+flask
+flask-cors
