@@ -4,6 +4,7 @@ import SkillChart from "./components/SkillChart";
 import { AnimatePresence, motion } from "framer-motion";
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import AnimatedNumber from "./components/AnimatedNumber";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 18 },
@@ -398,22 +399,22 @@ function App() {
                       initial="hidden"
                       animate="visible"
                       className="lg:col-span-2"
-                    >
-                      <div className="rounded-3xl border border-white/60 bg-white/80 p-6 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/75">
-                        
+                    >                   
                         <div className="w-full h-[420px]">
                           <SkillChart skills={result.skills || []} />
-                        </div>
-
-                      </div>
+                        </div>                     
                     </motion.div>
 
                     {/* RIGHT: KPI */}
-                    <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-4">
 
-                      <StatCard 
-                        title="📊 Resume Score" 
-                        value={`${result.score}/100`} 
+                      <StatCard
+                        title="📊 Resume Score"
+                        value={
+                          <>
+                            <AnimatedNumber value={result.score} />/100
+                          </>
+                        }
                       />
 
                       <StatCard
@@ -602,9 +603,37 @@ function App() {
           </AnimatePresence>
 
           <footer className="py-8 text-center text-slate-500 dark:text-slate-400">
-            <hr className="mb-6 border-slate-200 dark:border-slate-800" />
-            Built by Himanshu Mali • AI Career Tool 🚀
-          </footer>
+              <hr className="mb-6 border-slate-200 dark:border-slate-800" />
+
+              <div className="flex flex-col items-center gap-3">
+                
+                <p className="text-sm">
+                  Built by{" "}
+                  <span className="font-semibold text-slate-700 dark:text-white">
+                    Himanshu Mali
+                  </span>
+                </p>
+
+                <div className="flex items-center gap-4">
+                  
+                  <a
+                    href="https://www.linkedin.com/in/himanshu-mali701/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm transition hover:scale-105 hover:bg-blue-50 hover:text-blue-600 dark:border-slate-700 dark:hover:bg-slate-800 dark:hover:text-blue-400"                  >
+                    💼 LinkedIn
+                  </a>
+
+                  <span className="text-xs opacity-150">
+                    AI Career Tool 🚀
+                  </span>
+
+                </div>
+              </div>
+            </footer>
+
+
+
         </div>
       </motion.div>
     </div>
