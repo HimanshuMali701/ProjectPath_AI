@@ -22,6 +22,8 @@ function App() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+ 
+
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("projectpath-theme");
@@ -106,6 +108,7 @@ function App() {
     await loadSlim(engine);
   };
   return (
+    
     <div className={darkMode ? "dark" : ""}>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -113,26 +116,100 @@ function App() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative min-h-screen overflow-hidden bg-slate-50/80 text-slate-900 transition-colors duration-500 dark:bg-slate-950/80 dark:text-slate-100"
       >
-        <Particles
-              id="tsparticles"
+       <div className="absolute inset-0 -z-10">
+  
+          {/* Base gradient */}
+<div className="absolute inset-0 opacity-20 dark:opacity-40 animate-pulse bg-[radial-gradient(circle,rgba(56,189,248,0.15)_1px,transparent_1px)] bg-[size:40px_40px]" />
+          {/* Subtle glow (ONLY in dark mode) */}
+          <div className="hidden dark:block absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(56,189,248,0.12),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(99,102,241,0.12),transparent_40%)]" />
+
+        </div>
+          {/* Living Background */}
+          <div className="pointer-events-none absolute inset-0 overflow-hidden">
+            {/* Soft glow blobs */}
+            <div className="absolute -top-24 left-[-80px] h-72 w-72 rounded-full " />
+            <div className="absolute top-40 right-[-60px] h-80 w-80 rounded-full " />
+            <div className="absolute bottom-[-100px] left-1/3 h-96 w-96 rounded-full " />
+
+            {/* Ambient stars */}
+            <Particles
+            id="tsparticles"
+            init={particlesInit}
+            options={{
+              fullScreen: { enable: false },
+              background: { color: "transparent" },
+              fpsLimit: 60,
+
+              particles: {
+                number: {
+                  value: 80,
+                  density: { enable: true, area: 800 },
+                },
+
+                color: {
+                  value: darkMode ? "#ffffff" : "#0f172a", // visible in both modes
+                },
+
+                size: {
+                  value: { min: 1.5, max: 3 },
+                },
+
+                opacity: {
+                  value: { min: 0.4, max: 1 },
+                },
+
+                move: {
+                  enable: true,
+                  speed: 0.5,
+                  direction: "none",
+                  random: true,
+                },
+              },
+
+              interactivity: {
+                events: {
+                  onHover: { enable: true, mode: "repulse" },
+                },
+                modes: {
+                  repulse: {
+                    distance: 100,
+                  },
+                },
+              },
+            }}
+            className="absolute inset-0 z-10"
+          />
+
+            {/* Shooting stars */}
+            <Particles
+              id="shooting"
               init={particlesInit}
               options={{
                 fullScreen: { enable: false },
-                background: { color: "transparent" },
+
                 particles: {
-                  number: { value: 100 },
+                  number: { value: 5 },
+
                   color: { value: "#ffffff" },
+
                   size: { value: 2 },
+
                   move: {
                     enable: true,
-                    speed: 1,
-                    direction: "bottom",
+                    speed: 20,
+                    direction: "top-right",
+                    straight: true,
                     outModes: { default: "out" },
+                  },
+
+                  opacity: {
+                    value: 1,
                   },
                 },
               }}
-              className="absolute inset-0 z-0"
+              className="absolute inset-0 z-10"
             />
+          </div>
 
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-24 left-[-80px] h-72 w-72 rounded-full bg-cyan-300/25 blur-3xl dark:bg-cyan-500/10" />
@@ -141,32 +218,61 @@ function App() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-8 md:px-6 lg:px-8">
-          <header className="relative mb-8 text-center">
-            <motion.button
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              onClick={() => setDarkMode((v) => !v)}
-              className="absolute right-0 top-0 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-medium shadow-lg backdrop-blur-xl transition hover:bg-white dark:border-slate-800 dark:bg-slate-900/80 dark:hover:bg-slate-900"
-            >
-              {darkMode ? "☀️ Light" : "🌙 Dark"}
-            </motion.button>
+              <header className="relative mx-auto mb-12 max-w-4xl text-center">
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex rounded-full border border-white/60 bg-white/70 px-4 py-2 text-xs font-semibold tracking-[0.2em] text-slate-600 shadow-sm backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300"
-            >
-              PROJECTPATH AI
-            </motion.div>
+                  {/* Dark Mode Toggle */}
+                  <motion.button
+                    whileTap={{ scale: 0.96 }}
+                    whileHover={{  scale: 1.02, y: -2 }}
+                    onClick={() => setDarkMode((v) => !v)}
+                    className="absolute right-0 top-0 flex items-center gap-3 rounded-full border border-slate-200/70 bg-white/75 px-3 py-2 shadow-sm backdrop-blur-xl transition hover:shadow-cyan-500/20 dark:border-slate-700 dark:bg-slate-900/70"
+                  >
+                    <div className="relative h-5 w-10 rounded-full bg-slate-200 transition dark:bg-slate-700">
+                      <motion.span
+                        layout
+                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                        className={`absolute top-0.5 h-4 w-4 rounded-full bg-white shadow-md ${
+                          darkMode ? "left-5" : "left-0.5"
+                        }`}
+                      />
+                    </div>
 
-            <h1 className="mt-5 bg-gradient-to-r from-slate-900 via-cyan-700 to-indigo-700 bg-clip-text text-4xl font-black tracking-tight text-transparent md:text-6xl dark:from-white dark:via-cyan-300 dark:to-indigo-300">
-              🚀 ProjectPath AI
-            </h1>
-            <p className="mx-auto mt-3 max-w-2xl text-base text-slate-600 md:text-lg dark:text-slate-300">
-              From Skills → Projects → Career Growth 🚀
-            </p>
-          </header>
+                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                      {darkMode ? "Dark" : "Light"}
+                    </span>
+                  </motion.button>
+
+                  {/* Tag */}
+                 <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/70 px-5 py-2 text-xs font-semibold tracking-[0.25em] text-slate-600 shadow backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/70 dark:text-slate-300"
+                >
+                  PROJECTPATH AI
+                </motion.div>
+
+                <motion.h1
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.7 }}
+                  className="mt-6 text-5xl font-black tracking-tight md:text-7xl"
+                >
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(56,189,248,0.35)] dark:drop-shadow-[0_0_35px_rgba(56,189,248,0.4)]">
+                      ProjectPath AI
+                    </span>
+                  </motion.h1>
+
+                <motion.p
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                  className="mx-auto mt-4 max-w-2xl text-base text-slate-600 md:text-lg dark:text-slate-300"
+                >
+                  Turn skills into projects, and projects into career growth.
+                </motion.p>
+
+                </header>
 
           <motion.section
             variants={sectionVariants}
@@ -284,57 +390,51 @@ function App() {
                 exit={{ opacity: 0, y: 24 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="mb-8 grid gap-6 md:grid-cols-2">
-                  <motion.div
-                    variants={sectionVariants}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    <div className="rounded-3xl border border-white/60 bg-white/80 p-6 shadow-2xl shadow-slate-200/60 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/75 dark:shadow-black/20">
-                      <SkillChart skills={result.skills || []} />
-                    </div>
-                  </motion.div>
+                <div className="mb-8 grid gap-6 lg:grid-cols-3">
 
-                  <motion.div
-                    variants={sectionVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="flex items-center justify-center rounded-3xl border border-white/60 bg-white/80 p-6 shadow-2xl shadow-slate-200/60 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/75 dark:shadow-black/20"
-                  >
-                    <div className="text-center">
-                      <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Overall Score
-                      </p>
-                      <motion.h1
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                        className="mt-2 text-6xl font-black tracking-tight md:text-7xl"
-                      >
-                        {result.score}
-                      </motion.h1>
-                    </div>
-                  </motion.div>
-                </div>
+                    {/* LEFT: Chart */}
+                    <motion.div
+                      variants={sectionVariants}
+                      initial="hidden"
+                      animate="visible"
+                      className="lg:col-span-2"
+                    >
+                      <div className="rounded-3xl border border-white/60 bg-white/80 p-6 shadow-2xl backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/75">
+                        
+                        <div className="w-full h-[420px]">
+                          <SkillChart skills={result.skills || []} />
+                        </div>
 
-                <div className="mb-8 grid gap-6 md:grid-cols-3">
-                  <StatCard title="📊 Resume Score" value={`${result.score}/100`} />
-                  <StatCard
-                    title="🎯 Target Role"
-                    value={role.replace("_", " ")}
-                    capitalize
-                  />
-                  <StatCard
-                    title="🧭 Current Level"
-                    value={
-                      result.score >= 80
-                        ? "Advanced"
-                        : result.score >= 55
-                        ? "Intermediate"
-                        : "Beginner"
-                    }
-                  />
-                </div>
+                      </div>
+                    </motion.div>
+
+                    {/* RIGHT: KPI */}
+                    <div className="flex flex-col gap-4">
+
+                      <StatCard 
+                        title="📊 Resume Score" 
+                        value={`${result.score}/100`} 
+                      />
+
+                      <StatCard
+                        title="🎯 Target Role"
+                        value={role.replace("_", " ")}
+                        capitalize
+                      />
+
+                      <StatCard
+                        title="🧭 Current Level"
+                        value={
+                          result.score >= 80
+                            ? "Advanced"
+                            : result.score >= 55
+                            ? "Intermediate"
+                            : "Beginner"
+                        }
+                      />
+
+                    </div>
+                  </div>
 
                 <div className="mb-8 grid gap-6 lg:grid-cols-2">
                   <Card title="🧠 Current Skills">
@@ -527,20 +627,28 @@ function Card({ title, children }) {
 function StatCard({ title, value, capitalize = false }) {
   return (
     <motion.div
-      whileHover={{ y: -3 }}
+      whileHover={{ y: -4, scale: 1.01 }}
       transition={{ duration: 0.2 }}
-      className="rounded-3xl border border-slate-200 bg-white/85 p-6 shadow-xl shadow-slate-200/50 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/75 dark:shadow-black/20"
+      className="relative overflow-hidden rounded-3xl border border-white/60 bg-white/80 p-6 shadow-lg backdrop-blur-xl dark:border-slate-800 dark:bg-slate-900/75"
     >
-      <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">
-        {title}
-      </p>
-      <p
-        className={`mt-3 text-3xl font-black tracking-tight text-slate-900 dark:text-white ${
-          capitalize ? "capitalize" : ""
-        }`}
-      >
-        {value}
-      </p>
+      {/* Glow */}
+      <div className="absolute inset-0 opacity-0 transition hover:opacity-100">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-blue-500/5 to-indigo-500/10 blur-2xl" />
+      </div>
+
+      <div className="relative">
+        <p className="text-sm font-medium text-slate-400">
+          {title}
+        </p>
+
+        <p
+          className={`mt-3 text-3xl font-black tracking-tight text-white ${
+            capitalize ? "capitalize" : ""
+          }`}
+        >
+          {value}
+        </p>
+      </div>
     </motion.div>
   );
 }
