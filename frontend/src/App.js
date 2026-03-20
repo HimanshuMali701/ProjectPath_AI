@@ -376,9 +376,9 @@ function App() {
                 className="mb-8 flex justify-center"
               >
                 <div className="flex justify-center items-center gap-3 mt-6">
-                  <div className="animate-spin h-5 w-5 border-2 border-blue-500 border-t-transparent rounded-full"></div>
-                  <p>AI is building your career path...</p>
-                </div>
+                <div className="animate-spin h-5 w-5 border-2 border-blue-500 border-t-transparent rounded-full"></div>
+                <p>AI is building your career path...</p>
+              </div>
               </motion.div>
             )}
           </AnimatePresence>
