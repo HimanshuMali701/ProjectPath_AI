@@ -361,10 +361,19 @@ function App() {
               whileHover={{ scale: 1.01 }}
               onClick={handleAnalyze}
               disabled={loading}
-              className="mt-6 w-full rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 py-3.5 font-semibold text-white shadow-xl shadow-emerald-500/20 transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-70"
-            >
-              {loading ? "🧠 AI is analyzing your profile..." : "Analyze"}
+              className="mt-6 w-full rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 py-3.5 font-semibold text-white shadow-lg hover:scale-[1.02] hover:shadow-xl active:scale-95 transition-all duration-200"
+                >
+               {loading ? "🧠 AI is analyzing your profile..." : "🚀 Analyze Your Profile"}
             </motion.button>
+            {!loading && !result && (
+              <p className="
+                  text-xs mt-3 text-center px-4 py-1.5 rounded-full inline-block mx-auto backdrop-blur
+                  bg-yellow-100 text-yellow-800 border border-yellow-300
+                  dark:bg-yellow-500/10 dark:text-yellow-300 dark:border-yellow-400/20
+                ">
+                  💡 First request may take ~30–60 seconds (free server warm-up)
+                </p>
+            )}
           </motion.section>
 
           <AnimatePresence>
@@ -375,10 +384,17 @@ function App() {
                 exit={{ opacity: 0, y: -10 }}
                 className="mb-8 flex justify-center"
               >
-                <div className="flex justify-center items-center gap-3 mt-6">
-                <div className="animate-spin h-5 w-5 border-2 border-blue-500 border-t-transparent rounded-full"></div>
-                <p>AI is building your career path...</p>
-              </div>
+                <div className="flex justify-center items-center mt-6">
+                  <div className="bg-white/20 backdrop-blur-lg px-6 py-4 rounded-2xl shadow-lg flex items-center gap-4">
+                    <div className="animate-spin h-6 w-6 border-2 border-blue-500 border-t-transparent rounded-full"></div>
+                    <div>
+                      <p className="font-semibold">🧠 Building your career path...</p>
+                      <p className="text-xs text-gray-400">
+                        This may take up to a minute on first request
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
