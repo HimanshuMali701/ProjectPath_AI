@@ -78,7 +78,25 @@ ProjectPath AI is an AI-powered career project advisor that helps users discover
 5. Matches user profile with suitable projects  
 6. Provides recommendations with datasets & starter code  
 
+---
+
+## 📦 Installation & Setup
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/HimanshuMali701/ProjectPath_AI.git
 cd ProjectPath_AI
+```
+### 2. Backend Setup
+```
+cd backend
+pip install -r requirements.txt
+python app.py
+```
+### 3. Frontend Setup
+```
+cd frontend
+npm install
+npm start
+```
