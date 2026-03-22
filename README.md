@@ -100,3 +100,15 @@ cd frontend
 npm install
 npm start
 ```
+## Project Structure
+```
+ProjectPath_AI/
+│
+├── frontend/         # React frontend
+├── backend/         # Flask backend
+├── data/            # JSON knowledge base
+├── models/          # Skill logic / processing
+├── utils/           # Helper functions
+├── assets/          # Static assets
+└── README.md
+```
