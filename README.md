@@ -112,3 +112,14 @@ ProjectPath_AI/
 ├── assets/          # Static assets
 └── README.md
 ```
+---
+##💡 Use Cases
+Students building portfolio projects
+Beginners confused about next steps
+Career switchers in Data Science / AI
+Developers looking for structured project paths
+---
+## 🎯 Goal
+To help learners move from
+“learning randomly” → “building strategically”
+---
